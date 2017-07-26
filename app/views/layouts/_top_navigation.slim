@@ -1,0 +1,17 @@
+nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.bg-top-navigation
+
+  #navbarTogglerDemo02.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto.mt-2.mt-md-0.bt-collapse-padding
+      li.nav-item.active.bt-navigation-page
+        =<
+    .nav-item
+      form.search-form action=""
+        .form-group.align-items-center.dropdown
+          label.sr-only for="search" = t('search')
+          input#search.form-control.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" name="search" placeholder = t('placeholders.search') type="text"
+          span.fa.fa-search
+
+          .dropdown-menu.dropdown-menu-right.search aria-labelledby="navbarDropdownMenuSearch"
+            .results
+              h6.dropdown-header
+                | WalScrapMart
