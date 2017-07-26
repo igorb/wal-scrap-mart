@@ -1,3 +1,14 @@
+= simple_form_for product, url: products_path, method: :post, html: { class: 'form-horizontal' } do |f|
+  .row
+    .col-9.offset-md-1
+      = f.input :url, label: false, placeholder: t('placeholders.url')
+    .col-2
+      = f.submit '+', class: 'btn bt-btn bt-btn--dark-gray'
+
+h1.page-title
+  | Walmart's product List
 .product-list
-  h1 Products#index
-  p Find me in app/views/products/index.html.slim
+  ul.list-group
+    = render products
+
+= will_paginate products, renderer: 'BootstrapPaginationHelper::LinkRenderer', previous_label: '&laquo;', next_label: '&raquo;'

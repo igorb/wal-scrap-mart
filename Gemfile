@@ -39,6 +39,7 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'decent_exposure'
 gem 'will_paginate'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,6 +65,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 ruby '2.4.0'
