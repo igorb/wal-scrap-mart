@@ -8,6 +8,8 @@ AllCops:
     - 'log/**/*'
     - 'Gemfile'
     - 'spec/support/**/*'
+    - 'spec/**/*'
+    - 'config/initializers/*'
 Metrics/LineLength:
   Enabled: false
 Style/Documentation:
@@ -16,3 +18,5 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/MutableConstant:
   Enabled: false
+Metrics/AbcSize:
+  Max: 25

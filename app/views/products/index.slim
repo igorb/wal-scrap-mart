@@ -5,8 +5,7 @@
     .col-2
       = f.submit '+', class: 'btn bt-btn bt-btn--dark-gray'
 
-h1.page-title
-  | Walmart's product List
+h1.page-title = t('.title')
 .product-list
   ul.list-group
     = render products

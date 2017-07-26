@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # https://gist.github.com/henrik/1214011/7ffaa86636e5b5b1fe872f9273834373c58f7ab6
 require 'will_paginate/view_helpers/link_renderer'
 require 'will_paginate/view_helpers/action_view'
@@ -10,9 +12,9 @@ module BootstrapPaginationHelper
 
       def page_number(page)
         if page == current_page
-          link(page, "#", :class => 'active')
+          link(page, '#', class: 'active')
         else
-          link(page, page, :rel => rel_value(page))
+          link(page, page, rel: rel_value(page))
         end
       end
 
@@ -33,9 +35,9 @@ module BootstrapPaginationHelper
 
       def previous_or_next_page(page, text, classname)
         if page
-          link(text, page, :class => classname)
+          link(text, page, class: classname)
         else
-          link(text, "#", :class => classname + ' disabled')
+          link(text, '#', class: classname + ' disabled')
         end
       end
 
@@ -45,21 +47,18 @@ module BootstrapPaginationHelper
 
     private
 
-    def link(text, target, attributes = {})
-      if target.is_a? Fixnum
-        attributes[:rel] = rel_value(target)
-        target = url(target)
-      end
+      def link(text, target, attributes = {})
+        if target.is_a? Integer
+          attributes[:rel] = rel_value(target)
+          target = url(target)
+        end
 
-      unless target == "#"
-        attributes[:href] = target
-      end
+        attributes[:href] = target unless target == '#'
 
-      attributes[:class] ||= ''
-      classname = attributes[:class]
-      attributes[:class] += ' page-link'
-      tag(:li, tag(:a, text, attributes), :class => classname + ' page-item')
-    end
+        attributes[:class] ||= ''
+        classname = attributes[:class]
+        attributes[:class] += ' page-link'
+        tag(:li, tag(:a, text, attributes), class: classname + ' page-item')
+      end
   end
 end
-

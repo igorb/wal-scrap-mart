@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
-
   let!(:product) { create(:product) }
   let!(:products) { create_list(:product, 3) }
   let(:product_attributes) { attributes_for(:product) }
@@ -23,7 +24,7 @@ RSpec.describe ProductsController, type: :controller do
   describe 'POST create' do
     context 'with valid attributes' do
       it 'creates a new product' do
-        expect{ post :create, params: { product: product_attributes } }.to change(Product, :count).by(1)
+        expect { post :create, params: { product: product_attributes } }.to change(Product, :count).by(1)
       end
 
       it 'redirects to product list' do
@@ -34,7 +35,7 @@ RSpec.describe ProductsController, type: :controller do
 
     context 'with invalid attributes' do
       it 'does not save the new product' do
-        expect{ post :create, params: { product: product_invalid_attributes }}.to_not change(Product, :count)
+        expect { post :create, params: { product: product_invalid_attributes } }.to_not change(Product, :count)
       end
 
       it 're-renders the new method' do

@@ -34,3 +34,6 @@ en:
   placeholders:
     search: Seach by Reviews
     url: Get a new Walmart product
+  products:
+    index:
+      title: Walmart's product List
