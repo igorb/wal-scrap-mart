@@ -48,6 +48,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rubocop', '~> 0.48.0', require: false
   gem 'bullet'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -57,6 +60,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'shoulda-matchers'
 end
 
 ruby '2.4.0'
