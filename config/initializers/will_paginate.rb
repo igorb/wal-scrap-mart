@@ -1,3 +1,7 @@
+# https://gist.github.com/henrik/1214011/7ffaa86636e5b5b1fe872f9273834373c58f7ab6
+require 'will_paginate/view_helpers/link_renderer'
+require 'will_paginate/view_helpers/action_view'
+
 WillPaginate.per_page = 10
 
 module BootstrapPaginationHelper

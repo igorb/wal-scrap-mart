@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  # describe 'associations' do
-  # it { is_expected.to belong_to(:product) }
-  # end
+   describe 'associations' do
+     it { is_expected.to have_many(:reviews) }
+   end
 
   describe 'validations' do
     subject { build(:product) }
